@@ -4,18 +4,17 @@ import java.util.Scanner;
 
 public class Renda {
 	
-	int tipo;
-	int diasPorSemana;
-	double salarioDiario;
-	double salario = 0;
-	double salarioSemanal;
-	double salarioMensal;
-	int repeticao;
-	double rendaTotal = 0;
+
+	static double rendaTotal = 0;
 	
 		public double CalcRenda () {
-			
-
+			int tipo;
+			int diasPorSemana;
+			double salarioDiario;
+			double salario = 0;
+			double salarioSemanal;
+			double salarioMensal;
+			int repeticao;
 			
 			Scanner ler = new Scanner(System.in);
 			
@@ -60,6 +59,8 @@ public class Renda {
 			
 		
 			} while (repeticao != 0); 
+			
+			System.out.println(rendaTotal);
 				
 			
 			return rendaTotal;
@@ -69,9 +70,6 @@ public class Renda {
 			return rendaTotal;
 		}
 
-		public void setRendaTotal(double rendaTotal) {
-			this.rendaTotal = rendaTotal;
-		}
 
 
 }

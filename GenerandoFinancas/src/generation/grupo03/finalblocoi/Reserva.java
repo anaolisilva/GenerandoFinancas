@@ -8,11 +8,9 @@ public class Reserva {
 	
 	public static void ChamarReserva (double totalRenda, double totalDespesas) {
 		
-		totalRenda = 1000;
-		totalDespesas = 800;
-		double sobra =(totalRenda - totalDespesas);
-		double valorGuardar = (sobra / 2);
-		double objetivo = (valorGuardar * 6);
+		 double sobra =(totalRenda - totalDespesas);
+		 double valorGuardar = (sobra / 2);
+		 double objetivo = (valorGuardar * 6);
 		
 		String reserva, projecao, textoObj;
 		
@@ -82,7 +80,11 @@ public class Reserva {
 				    + "\numa quantia de emergência na sua reserva é muito importante!!!");
 		}
 		
-
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		
+		
 	}
 	
 

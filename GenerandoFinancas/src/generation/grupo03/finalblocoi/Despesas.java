@@ -4,26 +4,26 @@ import java.util.Scanner;
 
 public class Despesas {
 	
-	// Cassimiro: despesas
+	 // Cassimiro: despesas
 	//Ícaro: cálculo das porcentagens
 
-	double moradia = 0;
-	double agua = 0;
-	double luz = 0;
-	double entretenimento = 0;
-	double mercado = 0; // Troquei "comida" por "mercado" -Icru
-	double outros = 0; //Troquei "adicionarMais" por "Outros" - Ana
-	double Soma = 0;
+	static double moradia = 0;
+	static double agua = 0;
+	static double luz = 0;
+	static double entretenimento = 0;
+	static double mercado = 0; // Troquei "comida" por "mercado" -Icru
+	static double outros = 0; //Troquei "adicionarMais" por "Outros" - Ana
+	static double Soma = 0;
 	
-	double percentualMoradia = 0;
-	double percentualAgua = 0;
-	double percentualLuz = 0;
-	double percentualMercado = 0;
-	double percentualEntretenimento = 0;
-	double percentualExtra = 0; // Porcentagem da despesa extra (caso tenha).
+	static double percentualMoradia = 0;
+	static double percentualAgua = 0;
+	static double percentualLuz = 0;
+	static double percentualMercado = 0;
+	static double percentualEntretenimento = 0;
+	static double percentualExtra = 0; // Porcentagem da despesa extra (caso tenha).
 
 	
-	public double CalcDespesa (double renda) {
+	public static double CalcDespesa (double renda) {
 
 		System.out.println();
 		System.out.println();
@@ -106,14 +106,14 @@ public class Despesas {
 		if (outros > 0) {
 			percentualExtra = (outros * 100) / renda;
 
-			System.out.println("Da sua renda total, " + percentualMoradia + "% ï¿½ gasto em moradia.");
+			/* System.out.println("Da sua renda total, " + percentualMoradia + "% ï¿½ gasto em moradia.");
 			System.out.println("Da sua renda total, " + percentualAgua + "% ï¿½ gasto em ï¿½gua.");
 			System.out.println("Da sua renda total, " + percentualLuz + "% ï¿½ gasto em luz.");
 			System.out.println("Da sua renda total, " + percentualMercado + "% ï¿½ gasto em comida.");
 			System.out.println("Da sua renda total, " + percentualEntretenimento + "% ï¿½ gasto em entretenimento.");
 			System.out.println("Da sua renda total, " + percentualExtra + "% ï¿½ gasto em outros, ou seja, essa ï¿½ a "
 					+ "porcentagem da sua despesa extra.");
-
+			 */
 		}
 
 		// Condiï¿½ï¿½o caso o usuï¿½rio nï¿½o tenha renda extra.
@@ -141,14 +141,17 @@ public class Despesas {
 		if (outros <= 0) {
 			percentualEntretenimento = (entretenimento * 100) / renda;
 
-			System.out.println("Da sua renda total, " + percentualMoradia + "% ï¿½ gasto em moradia.");
+		/*	System.out.println("Da sua renda total, " + percentualMoradia + "% ï¿½ gasto em moradia.");
 			System.out.println("Da sua renda total, " + percentualAgua + "% ï¿½ gasto em ï¿½gua.");
 			System.out.println("Da sua renda total, " + percentualLuz + "% ï¿½ gasto em luz.");
 			System.out.println("Da sua renda total, " + percentualMercado + "% ï¿½ gasto em comida.");
 			System.out.println("Da sua renda total, " + percentualEntretenimento + "% ï¿½ gasto em entretenimento.");
-		}
+		*/
 		
+		
+		}
 		return Soma;
+
 	}
 
 
