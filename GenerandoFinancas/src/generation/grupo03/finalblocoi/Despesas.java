@@ -3,13 +3,16 @@ package generation.grupo03.finalblocoi;
 import java.util.Scanner;
 
 public class Despesas {
+	
+	// Cassimiro: despesas
+	//Õcaro: c·lculo das porcentagens
 
 	double moradia = 0;
 	double agua = 0;
 	double luz = 0;
 	double entretenimento = 0;
 	double mercado = 0; // Troquei "comida" por "mercado" -Icru
-	double outros = 0; //Troquei "adicionarMais por "Outros" - Ana
+	double outros = 0; //Troquei "adicionarMais" por "Outros" - Ana
 	double Soma = 0;
 	
 	double percentualMoradia = 0;
@@ -20,41 +23,36 @@ public class Despesas {
 	double percentualExtra = 0; // Porcentagem da despesa extra (caso tenha).
 
 	
-	public void CalcDespesa (double renda) {
+	public double CalcDespesa (double renda) {
 
+		System.out.println();
+		System.out.println();
+		
 		char continua;
-		renda = 900; // Coloquei essa variavel so pra testar antes da parte da renda ficar pronta.
-
-
-		// Cassimiro: despesas
-		//√çcaro: c√°lculo das porcentagens
-
-		System.out.println("Informar o valor da moradia: ");
-
-		@SuppressWarnings("resource")
 		Scanner Ler = new Scanner(System.in);
-
-		moradia = Ler.nextInt();
+		
+		System.out.println("Informar o valor da moradia: ");
+		moradia = Ler.nextDouble();
 
 		Soma += moradia;
 
 		System.out.println("Informar o valor da agua: ");
-		agua = Ler.nextInt();
+		agua = Ler.nextDouble();
 
 		Soma += agua;
 
 		System.out.println("Informar o valor do gasto luz: ");
-		luz = Ler.nextInt();
+		luz = Ler.nextDouble();
 
 		Soma += luz;
 
 		System.out.println("Informar o valor do entretenimento: ");
-		entretenimento = Ler.nextInt();
+		entretenimento = Ler.nextDouble();
 
 		Soma += entretenimento;
 
 		System.out.println("Informar o valor do comida: ");
-		mercado = Ler.nextInt();
+		mercado = Ler.nextDouble();
 
 		Soma += mercado;
 
@@ -64,7 +62,7 @@ public class Despesas {
 		continua = Ler.next().toUpperCase().charAt(0);
 		if (continua == 'S') {
 			System.out.println("Informar despesas adicionais:");
-			outros = Ler.nextInt();
+			outros = Ler.nextDouble();
 
 			Soma += outros;
 
@@ -74,6 +72,7 @@ public class Despesas {
 			System.out.println("VocÔøΩ nÔøΩo possui nenhum gasto extra. Continue economizando!");
 
 		}
+		
 
 		// Icru
 
@@ -148,6 +147,8 @@ public class Despesas {
 			System.out.println("Da sua renda total, " + percentualMercado + "% ÔøΩ gasto em comida.");
 			System.out.println("Da sua renda total, " + percentualEntretenimento + "% ÔøΩ gasto em entretenimento.");
 		}
+		
+		return Soma;
 	}
 
 

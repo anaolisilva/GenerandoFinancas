@@ -82,7 +82,7 @@ public class Reserva {
 				    + "\numa quantia de emergência na sua reserva é muito importante!!!");
 		}
 		
-		scan.close();	
+
 	}
 	
 

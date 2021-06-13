@@ -8,10 +8,12 @@ public class GenerandoFinancas {
 		
 		Despesas chamarDespesas = new Despesas();
 		Impressao imprimir = new Impressao();
+		Reserva chamarReserva = new Reserva();
+		Renda chamarRenda = new Renda();
 		
-		
-		chamarDespesas.CalcDespesa(0);
-		
+		double renda = chamarRenda.CalcRenda();
+		double despesas = chamarDespesas.CalcDespesa(0);
+		chamarReserva.ChamarReserva(0, despesas);
 		imprimir.Imprimir();
 
 	}
