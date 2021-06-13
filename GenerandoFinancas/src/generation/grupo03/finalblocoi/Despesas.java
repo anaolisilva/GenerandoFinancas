@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Despesas {
 	
-	 // Cassimiro: despesas
+	 //Cassimiro: despesas
 	//Ícaro: cálculo das porcentagens
 
 	static double moradia = 0;
@@ -13,6 +13,7 @@ public class Despesas {
 	static double entretenimento = 0;
 	static double mercado = 0; // Troquei "comida" por "mercado" -Icru
 	static double outros = 0; //Troquei "adicionarMais" por "Outros" - Ana
+	static double totalOutros = 0;
 	static double Soma = 0;
 	
 	static double percentualMoradia = 0;
@@ -23,60 +24,67 @@ public class Despesas {
 	static double percentualExtra = 0; // Porcentagem da despesa extra (caso tenha).
 
 	
-	public static double CalcDespesa (double renda) {
+	public double CalcDespesa (double renda) {
 
 		System.out.println();
 		System.out.println();
+		System.out.println("Agora vamos ao cálculo das despesas!\nDigite o valor das suas despesas conforme as categorias indicadas."
+				+ "\nFica tranquilo que a gente vai adicionar uma categoria de cada vez!\n\n"
+				+ "Se você está calculando as despesas sozinhe, mas mora com outras pessoas, não esqueça de adicionar "
+				+ "\napenas sua parte das despesas, ou seja, digite o valor que você é responsável por pagar!"); //Essa última parte tá meio confusa mas eu sei como melhorar? não - Ana
 		
 		char continua;
 		Scanner Ler = new Scanner(System.in);
 		
-		System.out.println("Informar o valor da moradia: ");
+		System.out.println("\n\n\nQuanto você paga em moradia (aluguel, parcela, condomínio...)?");
 		moradia = Ler.nextDouble();
 
 		Soma += moradia;
 
-		System.out.println("Informar o valor da agua: ");
+		System.out.println("\nQuanto você paga na sua conta de água, mais ou menos? ");
 		agua = Ler.nextDouble();
 
 		Soma += agua;
 
-		System.out.println("Informar o valor do gasto luz: ");
+		System.out.println("\nQuanto você paga na sua conta de luz, mais ou menos?");
 		luz = Ler.nextDouble();
 
 		Soma += luz;
 
-		System.out.println("Informar o valor do entretenimento: ");
+		System.out.println("\nQuanto você paga de entretenimento por mês, mais ou menos?\n(um cineminha de vez em quando, assinaturas de streaming, jogos...)");
 		entretenimento = Ler.nextDouble();
 
 		Soma += entretenimento;
 
-		System.out.println("Informar o valor do comida: ");
+		System.out.println("\nQuanto você gasta de mercado, por mês, mais ou menos?");
 		mercado = Ler.nextDouble();
 
 		Soma += mercado;
 
-		System.out.println("Valor total da despesa: " + Soma);
-
-		System.out.println("Deseja informar despesas adicionais? (S/N)");
+		System.out.println("\nDeseja informar despesas adicionais? (S/N)");
 		continua = Ler.next().toUpperCase().charAt(0);
+		
 		if (continua == 'S') {
-			System.out.println("Informar despesas adicionais:");
-			outros = Ler.nextDouble();
-
-			Soma += outros;
-
-			System.out.println("Valor total da despesa: " + Soma);
-
-		} else if (continua == 'N') {
-			System.out.println("Vocï¿½ nï¿½o possui nenhum gasto extra. Continue economizando!");
+			System.out.println("\n\nPode digitar uma despesa adicional de cada vez, a gente calcula o total pra você!\n"
+					+ "Quando você tiver acabado de digitar essas outras despesas, digite 0.\n\n");
+			outros = 1;
+		} else {
+			System.out.println("\n\nVocê não possui nenhum gasto extra. Continue economizando!");
 
 		}
 		
-
+		while (outros != 0) {
+			System.out.println("Informe suas despesas adicionais:");
+			outros = Ler.nextDouble();
+			
+			totalOutros += outros;
+			Soma += outros;
+		} 
+		
+		System.out.println("\n\nEsse é o valor total das suas despesas: R$ " + Soma + "\n\n");
+		
 		// Icru
-
-		// Condiï¿½ï¿½o caso o usuï¿½rio tenha despesa extra.
+		// Condição caso o usuário tenha despesa extra.
 
 		if (outros > 0) {
 			percentualMoradia = (moradia * 100) / renda;
@@ -103,20 +111,11 @@ public class Despesas {
 
 		}
 
-		if (outros > 0) {
-			percentualExtra = (outros * 100) / renda;
-
-			/* System.out.println("Da sua renda total, " + percentualMoradia + "% ï¿½ gasto em moradia.");
-			System.out.println("Da sua renda total, " + percentualAgua + "% ï¿½ gasto em ï¿½gua.");
-			System.out.println("Da sua renda total, " + percentualLuz + "% ï¿½ gasto em luz.");
-			System.out.println("Da sua renda total, " + percentualMercado + "% ï¿½ gasto em comida.");
-			System.out.println("Da sua renda total, " + percentualEntretenimento + "% ï¿½ gasto em entretenimento.");
-			System.out.println("Da sua renda total, " + percentualExtra + "% ï¿½ gasto em outros, ou seja, essa ï¿½ a "
-					+ "porcentagem da sua despesa extra.");
-			 */
+		if (totalOutros > 0) {
+			percentualExtra = (totalOutros * 100) / renda;
 		}
 
-		// Condiï¿½ï¿½o caso o usuï¿½rio nï¿½o tenha renda extra.
+		// Condição caso o usuïário não tenha renda extra.
 
 		else if (outros <= 0) {
 			percentualMoradia = (moradia * 100) / renda;
@@ -139,15 +138,7 @@ public class Despesas {
 		}
 
 		if (outros <= 0) {
-			percentualEntretenimento = (entretenimento * 100) / renda;
-
-		/*	System.out.println("Da sua renda total, " + percentualMoradia + "% ï¿½ gasto em moradia.");
-			System.out.println("Da sua renda total, " + percentualAgua + "% ï¿½ gasto em ï¿½gua.");
-			System.out.println("Da sua renda total, " + percentualLuz + "% ï¿½ gasto em luz.");
-			System.out.println("Da sua renda total, " + percentualMercado + "% ï¿½ gasto em comida.");
-			System.out.println("Da sua renda total, " + percentualEntretenimento + "% ï¿½ gasto em entretenimento.");
-		*/
-		
+			percentualEntretenimento = (entretenimento * 100) / renda;		
 		
 		}
 		return Soma;
@@ -172,6 +163,16 @@ public class Despesas {
 
 	public void setAgua(double agua) {
 		this.agua = agua;
+	}
+
+
+	public double getTotalOutros() {
+		return totalOutros;
+	}
+
+
+	public void setTotalOutros(double totalOutros) {
+		Despesas.totalOutros = totalOutros;
 	}
 
 
