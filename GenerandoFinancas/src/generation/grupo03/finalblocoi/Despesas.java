@@ -79,7 +79,7 @@ public class Despesas {
 			
 			totalOutros += outros;
 			Soma += outros;
-		} 
+		} //Coloquei um whilezinho aqui pra gente fazer aquele rolê da pessoa não ter que calcular coisa sozinha! -Ana
 		
 		System.out.println("\n\nEsse é o valor total das suas despesas: R$ " + Soma + "\n\n");
 		
@@ -87,7 +87,7 @@ public class Despesas {
 		// Condição caso o usuário tenha despesa extra.
 
 		if (outros > 0) {
-			percentualMoradia = (moradia * 100) / renda;
+			percentualMoradia = moradia * 100 / renda;
 
 		}
 
@@ -151,18 +151,8 @@ public class Despesas {
 	}
 
 
-	public void setMoradia(double moradia) {
-		this.moradia = moradia;
-	}
-
-
 	public double getAgua() {
 		return agua;
-	}
-
-
-	public void setAgua(double agua) {
-		this.agua = agua;
 	}
 
 
@@ -181,28 +171,15 @@ public class Despesas {
 	}
 
 
-	public void setLuz(double luz) {
-		this.luz = luz;
-	}
-
 
 	public double getEntretenimento() {
 		return entretenimento;
 	}
 
 
-	public void setEntretenimento(double entretenimento) {
-		this.entretenimento = entretenimento;
-	}
-
 
 	public double getMercado() {
 		return mercado;
-	}
-
-
-	public void setMercado(double mercado) {
-		this.mercado = mercado;
 	}
 
 
@@ -211,28 +188,14 @@ public class Despesas {
 	}
 
 
-	public void setOutros(double outros) {
-		this.outros = outros;
-	}
-
-
 	public double getSoma() {
 		return Soma;
 	}
 
 
-	public void setSoma(double soma) {
-		Soma = soma;
-	}
 
-
-	public double getPercentualMoradia() {
-		return percentualMoradia;
-	}
-
-
-	public void setPercentualMoradia(double percentualMoradia) {
-		this.percentualMoradia = percentualMoradia;
+	public double getPercentualMoradia(double renda) {
+		return moradia * 100 / renda;
 	}
 
 
@@ -241,18 +204,8 @@ public class Despesas {
 	}
 
 
-	public void setPercentualAgua(double percentualAgua) {
-		this.percentualAgua = percentualAgua;
-	}
-
-
 	public double getPercentualLuz() {
 		return percentualLuz;
-	}
-
-
-	public void setPercentualLuz(double percentualLuz) {
-		this.percentualLuz = percentualLuz;
 	}
 
 
@@ -261,18 +214,8 @@ public class Despesas {
 	}
 
 
-	public void setPercentualMercado(double percentualMercado) {
-		this.percentualMercado = percentualMercado;
-	}
-
-
 	public double getPercentualEntretenimento() {
 		return percentualEntretenimento;
-	}
-
-
-	public void setPercentualEntretenimento(double percentualEntretenimento) {
-		this.percentualEntretenimento = percentualEntretenimento;
 	}
 
 
@@ -280,8 +223,4 @@ public class Despesas {
 		return percentualExtra;
 	}
 
-
-	public void setPercentualExtra(double percentualExtra) {
-		this.percentualExtra = percentualExtra;
-	}
 }

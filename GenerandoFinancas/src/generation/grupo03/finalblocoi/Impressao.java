@@ -8,6 +8,7 @@ public class Impressao {
 		
 		Despesas despesas = new Despesas();
 		Renda rendaTotal = new Renda();
+		double renda = rendaTotal.getRendaTotal();
 		
 		System.out.println("Aqui está sua tabela de orçamento pessoal. Ela tem o total da sua renda,"
 				+ "\nsuas despesas divididas em categorias, e um cálculo de porcentagem dos seus gastos."
@@ -22,7 +23,7 @@ public class Impressao {
 		System.out.printf("%n%3s %-11S%3s %-8.2f %1s %5s %%  %s", "|", "RENDA TOTAL", "|", rendaTotal.getRendaTotal(), "|", "+++++", "|");
 		System.out.printf("%n%3s------------------------------------", "");
 		
-		System.out.printf("%n%3s %-11S%3s %-8.2f %1s %5.2f %%  %s", "|", "Moradia", "|", despesas.getMoradia(), "|", despesas.getPercentualMoradia(), "|");
+		System.out.printf("%n%3s %-11S%3s %-8.2f %1s %5.2f %%  %s", "|", "Moradia", "|", despesas.getMoradia(), "|", despesas.getPercentualMoradia(renda), "|");
 		System.out.printf("%n%3s------------------------------------", "");
 	
 		System.out.printf("%n%3s %-11S%3s %-8.2f %1s %5.2f %%  %s", "|", "água", "|", despesas.getAgua(), "|", despesas.getPercentualAgua(), "|");

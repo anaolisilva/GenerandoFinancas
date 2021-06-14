@@ -24,7 +24,7 @@ public class Introducao {
 				+ "\nreais de centavos com vírgula (00,00)."
 				+ "\n\nNo nosso programa, você pode calcular um orçamento pessoal tanto só para você quanto para um"
 				+ "\nnúcleo, ou seja, para você em conjunto com quem mora contigo. Vamos dar mais informações conforme"
-				+ "\no programa rodar!" //Aqui tá estranho mas não sei mudar aaaaa
+				+ "\no programa rodar!" 
 				+ "\n\nTudo pronto? Vamos lá!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 		
 
