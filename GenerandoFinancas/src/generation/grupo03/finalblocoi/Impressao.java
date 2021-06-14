@@ -13,7 +13,7 @@ public class Impressao {
 		System.out.println("Aqui está sua tabela de orçamento pessoal. Ela tem o total da sua renda,"
 				+ "\nsuas despesas divididas em categorias, e um cálculo de porcentagem dos seus gastos."
 				+ "\nUm exemplo: se sua conta de luz é 10% da sua renda, isso quer dizer que, a cada 100 reais"
-				+ "\n que você recebe, você gasta 10 deles na água de luz!"
+				+ "\n que você recebe, você gasta 10 deles na conta de luz!"
 				+ "\n\n\nAnalisando as porcentagens dos seus gastos você pode ver se há algo que te parece"
 				+ "\nestranho: se uma porcentagem está mais alta do que você acha que faz sentido, verifique se"
 				+ "\né possível economizar nessa categoria!\n\n\n\n");

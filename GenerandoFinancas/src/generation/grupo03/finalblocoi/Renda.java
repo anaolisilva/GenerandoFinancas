@@ -61,8 +61,8 @@ public class Renda {
 			}
 			
 			System.out.println("\nVocê quer adicionar mais uma renda? (S/N)"
-					+ "\n--> Pode ser tanto uma renda extra sua (aquela que não é do seu trabalho oficial, mas que complementa todo mês)"
-					+ "\n    quanto a renda de mais alguém do seu núcleo!");
+					+ "\n--> Pode ser tanto uma renda extra sua (aquela que não é do seu trabalho oficial, "
+					+ "\n    mas que complementa todo mês) quanto a renda de mais alguém do seu núcleo!");
 			repeticao = ler.next().toUpperCase().charAt(0);
 
 			rendaTotal = rendaTotal + salario;
